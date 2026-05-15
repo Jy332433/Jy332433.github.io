@@ -51,6 +51,13 @@
   header.page-header {
     margin-bottom: 36px;
     padding-bottom: 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+  }
+  header.page-header .header-text {
+    flex: 1 1 auto;
+    min-width: 0;
   }
   header.page-header h1 {
     font-family: var(--sans);
@@ -65,6 +72,17 @@
     color: var(--color-muted);
     margin: 0;
     max-width: 62ch;
+  }
+  header.page-header img.portrait {
+    flex: 0 0 auto;
+    width: 150px;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+  @media (max-width: 560px) {
+    header.page-header { flex-direction: column-reverse; gap: 16px; }
+    header.page-header img.portrait { width: 120px; }
   }
 
   /* Section headings */
@@ -165,8 +183,11 @@
   </nav>
 
   <header class="page-header">
-    <h1>Junyu Ren</h1>
-    <p class="positioning">PhD student at the University of Chicago, working at the intersection of applied mathematics, neural-network theory, and AI-augmented research.</p>
+    <div class="header-text">
+      <h1>Junyu Ren</h1>
+      <p class="positioning">PhD student at the University of Chicago. I work at the AI&ndash;math interface in two directions: building AI-(co)-mathematician systems to tackle long-horizon, heavy-machinery open problems, and developing mathematical tools and novel frameworks rooted in pure mathematics to mitigate hallucination, characterize complexity limits, and advance mechanistic interpretability.</p>
+    </div>
+    <img class="portrait" src="photo.jpg" alt="Junyu Ren">
   </header>
 
   <!-- ===================================================================
