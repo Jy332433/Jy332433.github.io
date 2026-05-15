@@ -906,7 +906,18 @@
 
     <details class="paper-details">
       <summary>breakdown</summary>
-      <p class="desc">Limiting each layer to width <em>d</em>=3 (representation space <strong>R</strong><sup>3</sup>), we study how networks transform low-dimensional topological invariants &mdash; links, knots, and Milnor's &mu;-invariant &mdash; across layers. ResNets and transformers are strictly more powerful than feedforward networks, which in turn dominate invertible/flow-based models; non-monotone activations close the feedforward gap. Results generalize from <em>d</em>=3 to arbitrary <em>d</em> &gt; 3, with a linking-detection algorithm validated on CIFAR-10.</p>
+      <p class="desc">
+        Width-matched feedforward networks with monotone activations cannot separate certain
+        linked or knotted manifolds; skip connections, attention, and non-monotone activations
+        enable the "folding" operations that break this topological barrier. We treat
+        neural-network expressivity as a question of geometric transformation on embedded data,
+        not only approximation rate or target-function fit. Experiments expose the gap as
+        accuracy ceilings on Hopf-link tasks, and a linking-detection algorithm finds
+        real-image linking in CIFAR-10 whose consistency matrix predicts pairwise
+        classification difficulty better than standard distance metrics. The result positions
+        low-dimensional, ambient-sensitive topology as a concrete lens on why modern
+        architectures can transform data geometries that plain feedforward networks cannot.
+      </p>
 
       <div class="axes-caps">
         <div></div>
