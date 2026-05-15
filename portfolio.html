@@ -53,6 +53,24 @@
   /* ------------------------------------------------------------------
      Header
      ------------------------------------------------------------------ */
+  /* Top nav bar */
+  nav.top-nav {
+    margin: 0 0 32px 0;
+    padding: 0 0 14px 0;
+    border-bottom: 1px solid var(--color-rule);
+    font-family: var(--sans);
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 22px;
+    color: var(--color-muted);
+  }
+  nav.top-nav a {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+  nav.top-nav a:hover { text-decoration: underline; }
+
   header.page-header {
     margin-bottom: 36px;
     padding-bottom: 18px;
@@ -842,6 +860,13 @@
 </head>
 <body>
 <main>
+
+  <nav class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Research portfolio</a>
+    <a href="cv.pdf">CV</a>
+    <a href="https://github.com/7pocheR">GitHub</a>
+  </nav>
 
   <header class="page-header">
     <h1>Junyu Ren &mdash; research portfolio</h1>
