@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Junyu Ren</title>
+<style>
+  :root {
+    --serif: Georgia, "Times New Roman", Times, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+    --color-text: #1a1a1a;
+    --color-muted: #5a5a5a;
+    --color-faint: #888;
+    --color-rule: #d8d8d8;
+    --color-bg: #fbfaf7;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 28px 96px 28px;
+  }
+
+  a {
+    color: #1a4480;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+  a:hover { color: #0d2c5a; }
+  a:visited { color: #1a4480; }
+
+  /* Header */
+  header.page-header {
+    margin-bottom: 36px;
+    border-bottom: 1px solid var(--color-rule);
+    padding-bottom: 18px;
+  }
+  header.page-header h1 {
+    font-family: var(--sans);
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.015em;
+  }
+  header.page-header .positioning {
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--color-muted);
+    margin: 0;
+    max-width: 62ch;
+  }
+
+  /* Section headings */
+  h2 {
+    font-family: var(--sans);
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--color-text);
+    margin: 44px 0 14px 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  p { margin: 0 0 14px 0; }
+
+  /* News list */
+  ol.news {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ol.news li {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 14px;
+    padding: 12px 0;
+    border-top: 1px solid var(--color-rule);
+  }
+  ol.news li:first-of-type { border-top: 0; padding-top: 4px; }
+  ol.news li .date {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--color-faint);
+    padding-top: 4px;
+    white-space: nowrap;
+  }
+  ol.news li .body {
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--color-text);
+  }
+  ol.news li .body em {
+    font-style: italic;
+    color: var(--color-text);
+  }
+
+  /* Quick links */
+  nav.quick-links {
+    margin: 8px 0 0 0;
+    font-family: var(--sans);
+    font-size: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+  }
+  nav.quick-links a {
+    text-decoration: none;
+  }
+  nav.quick-links a::before {
+    content: "→ ";
+    color: var(--color-faint);
+    text-decoration: none;
+  }
+  nav.quick-links a:hover { text-decoration: underline; }
+
+  /* Footer */
+  footer.page-footer {
+    margin-top: 56px;
+    padding-top: 18px;
+    border-top: 1px solid var(--color-rule);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--color-faint);
+  }
+
+  /* Print */
+  @media print {
+    html, body { background: #fff; color: #000; }
+    main { max-width: 100%; padding: 24px; }
+    footer.page-footer { color: #555; }
+  }
+
+  /* Narrow viewports */
+  @media (max-width: 560px) {
+    main { padding: 32px 16px 64px 16px; }
+    ol.news li { grid-template-columns: 1fr; gap: 4px; }
+    header.page-header h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <header class="page-header">
+    <h1>Junyu Ren</h1>
+    <p class="positioning">PhD student at the University of Chicago, working at the intersection of applied mathematics, neural-network theory, and AI-augmented research.</p>
+  </header>
+
+  <!-- ===================================================================
+       ABOUT
+       =================================================================== -->
+  <h2>About</h2>
+  <p>
+    I'm a second-year PhD student in Computational and Applied Mathematics at the University of Chicago, advised by <a href="https://www.stat.uchicago.edu/~lekheng/">Lek-Heng Lim</a>. I also work with <a href="https://people.cs.uchicago.edu/~risi/">Risi Kondor</a> and <a href="https://www.victorveitch.com/">Victor Veitch</a>.
+    My research sits at the intersection of applied mathematics, neural-network theory, mechanistic interpretability, and AI-augmented scientific work.
+    Before UChicago, I read Mathematics and Philosophy at Oxford.
+  </p>
+
+  <!-- ===================================================================
+       NEWS
+       =================================================================== -->
+  <h2>News</h2>
+  <ol class="news">
+    <li>
+      <span class="date">May 2026</span>
+      <span class="body">
+        Several papers in submission &mdash; spanning neural-network optimization, complexity of attention, mechanistic interpretability of mixture-of-experts routing, and formal verification of agent reasoning. <a href="portfolio.html">See the portfolio.</a>
+      </span>
+    </li>
+    <li>
+      <span class="date">Apr 2026</span>
+      <span class="body">
+        <em>Low-dimensional Topology of Deep Neural Networks</em> (with Lek-Heng Lim) accepted as a poster at <a href="https://icml.cc/virtual/2026/poster/60602">ICML 2026</a>.
+      </span>
+    </li>
+    <li>
+      <span class="date">Mar 2026</span>
+      <span class="body">
+        Two papers accepted at ICLR 2026 workshops on multi-agent process rewards: <a href="https://openreview.net/forum?id=s06wgoO65a"><em>MAPPA</em></a> (Workshop RSI) and <a href="https://openreview.net/forum?id=5tQInt3Uar"><em>Agent-as-a-Coach</em></a> (Workshop MALGAI).
+      </span>
+    </li>
+    <li>
+      <span class="date">Oct 2025</span>
+      <span class="body">
+        arXiv preprint: <a href="https://arxiv.org/abs/2510.15624"><em>Build Your Personalized Research Group</em></a> &mdash; a multiagent framework for continual and interactive science automation.
+      </span>
+    </li>
+  </ol>
+
+  <!-- ===================================================================
+       WORKFLOW TOOLS
+       =================================================================== -->
+  <h2>Workflow tools</h2>
+  <p>
+    <a href="https://github.com/7pocheR/ccrender"><strong>ccrender</strong></a> &mdash; chat renderer with a VS Code extension companion for Claude Code. I built it for the moments where the CLI's rendering falls short: real-time LaTeX in mid-conversation clarifications, and markdown tables, ASCII flowcharts, or mermaid diagrams that don't display cleanly in the terminal. A small piece of tooling, but it noticeably changed my day-to-day Claude use.
+  </p>
+
+  <!-- ===================================================================
+       QUICK LINKS
+       =================================================================== -->
+  <h2>Links</h2>
+  <nav class="quick-links">
+    <a href="portfolio.html">Research portfolio</a>
+    <a href="cv.pdf">CV</a>
+    <a href="https://github.com/7pocheR">GitHub</a>
+    <a href="mailto:junyuren@uchicago.edu">Email</a>
+  </nav>
+
+  <!-- ===================================================================
+       FOOTER
+       =================================================================== -->
+  <footer class="page-footer">
+    Junyu Ren &middot; UChicago &middot; junyuren@uchicago.edu &middot; github.com/7pocheR
+  </footer>
+
+</main>
+</body>
+</html>

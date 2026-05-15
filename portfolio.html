@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Research portfolio — Junyu Ren</title>
+<style>
+  /* ------------------------------------------------------------------
+     System-default font stacks — no external fonts loaded.
+     ------------------------------------------------------------------ */
+  :root {
+    --serif: Georgia, "Times New Roman", Times, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+    --color-text: #1a1a1a;
+    --color-muted: #5a5a5a;
+    --color-faint: #888;
+    --color-rule: #d8d8d8;
+    --color-bg: #fbfaf7;
+    --color-card: #ffffff;
+
+    --color-human: #1c3a6b;       /* deep blue — human-only / mostly human */
+    --color-partner: #6b6b6b;     /* gray — true partnership */
+    --color-ai: #c8654d;          /* warm orange — mostly AI / AI-led */
+    --color-na: #c4c4c4;          /* light gray — N/A */
+
+    --track-bg: #ededeb;
+    --track-tick: #cfcfcc;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 28px 96px 28px;
+  }
+
+  /* ------------------------------------------------------------------
+     Header
+     ------------------------------------------------------------------ */
+  header.page-header {
+    margin-bottom: 36px;
+    border-bottom: 1px solid var(--color-rule);
+    padding-bottom: 18px;
+  }
+  header.page-header h1 {
+    font-family: var(--sans);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.01em;
+  }
+  header.page-header .subtitle {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--color-muted);
+    margin: 0;
+  }
+  header.page-header .as-of {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--color-faint);
+    margin-top: 8px;
+    letter-spacing: 0;
+  }
+
+  /* ------------------------------------------------------------------
+     Section headings
+     ------------------------------------------------------------------ */
+  h2 {
+    font-family: var(--sans);
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--color-text);
+    margin: 44px 0 14px 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  p { margin: 0 0 12px 0; }
+  p.note {
+    font-size: 14.5px;
+    color: var(--color-text);
+  }
+
+  /* ------------------------------------------------------------------
+     Definition lists — axes + scale
+     ------------------------------------------------------------------ */
+  dl.defs {
+    margin: 0 0 12px 0;
+    padding: 0;
+  }
+  dl.defs dt {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10px;
+    color: var(--color-text);
+  }
+  dl.defs dd {
+    margin: 2px 0 0 0;
+    font-size: 14px;
+    color: var(--color-muted);
+  }
+
+  ol.scale {
+    list-style: none;
+    margin: 8px 0 0 0;
+    padding: 0;
+    font-family: var(--sans);
+    font-size: 14px;
+  }
+  ol.scale li {
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  ol.scale .swatch {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex: 0 0 14px;
+  }
+  ol.scale .step-num {
+    font-weight: 600;
+    color: var(--color-text);
+    width: 14px;
+    display: inline-block;
+  }
+
+  /* ------------------------------------------------------------------
+     Legend (color + scale, inline)
+     ------------------------------------------------------------------ */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 22px;
+    padding: 8px 0 16px 0;
+    margin: 14px 0 22px 0;
+    border: 0;
+    background: transparent;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--color-muted);
+  }
+  .legend .item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .legend .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex: 0 0 12px;
+  }
+
+  /* ------------------------------------------------------------------
+     Per-paper cards
+     ------------------------------------------------------------------ */
+  article.paper {
+    background: transparent;
+    border: 0;
+    border-top: 1px solid var(--color-rule);
+    padding: 30px 0 12px 0;
+    margin: 24px 0 0 0;
+  }
+  article.paper:first-of-type {
+    border-top: 0;
+    padding-top: 8px;
+  }
+  article.paper > h3 {
+    font-family: var(--sans);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+  }
+  article.paper .authors {
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--color-text);
+    margin: 0 0 6px 0;
+  }
+  article.paper .authors strong {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  article.paper .authors sup {
+    font-weight: 400;
+    color: var(--color-faint);
+    font-size: 0.75em;
+  }
+  article.paper .venue {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13.5px;
+    color: var(--color-muted);
+    text-transform: none;
+    letter-spacing: 0;
+    margin: 0 0 14px 0;
+  }
+  article.paper .desc {
+    font-size: 15.5px;
+    color: var(--color-text);
+    margin: 0 0 8px 0;
+  }
+  article.paper .ptype {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--color-muted);
+    margin: 0 0 18px 0;
+  }
+  article.paper .scope-note {
+    background: transparent;
+    border-left: 2px solid var(--color-rule);
+    padding: 2px 0 2px 12px;
+    font-size: 13.5px;
+    font-style: italic;
+    color: var(--color-muted);
+    margin: 4px 0 18px 0;
+  }
+  article.paper .scope-note strong {
+    font-style: normal;
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  /* ------------------------------------------------------------------
+     Axis tracks
+     ------------------------------------------------------------------ */
+  .axes {
+    margin: 14px 0 8px 0;
+    padding: 0;
+    list-style: none;
+  }
+  .axes li {
+    display: grid;
+    grid-template-columns: 200px 1fr 30px;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0;
+    font-family: var(--sans);
+    font-size: 13px;
+  }
+  .axes .axis-label {
+    color: var(--color-text);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .axes .axis-rating {
+    text-align: right;
+    color: var(--color-muted);
+    font-size: 12px;
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* The track */
+  .track {
+    position: relative;
+    height: 16px;
+    background: var(--track-bg);
+    border-radius: 8px;
+  }
+  .track .tick {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--track-tick);
+  }
+  .track .tick.t1 { left: 0%; }
+  .track .tick.t2 { left: 25%; }
+  .track .tick.t3 { left: 50%; }
+  .track .tick.t4 { left: 75%; }
+  .track .tick.t5 { left: 100%; }
+  .track .marker {
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    margin-top: -6px;
+    border-radius: 50%;
+    border: 2px solid var(--color-bg);
+    box-shadow: none;
+  }
+  .track .marker.r1 { left: 0%;   background: var(--color-human); }
+  .track .marker.r2 { left: 25%;  background: var(--color-human); }
+  .track .marker.r3 { left: 50%;  background: var(--color-partner); }
+  .track .marker.r4 { left: 75%;  background: var(--color-ai); }
+  .track .marker.r5 { left: 100%; background: var(--color-ai); }
+
+  /* "Between" markers — 1.5, 2.5, 3.5, 4.5 */
+  .track .marker.r15 { left: 12.5%; background: var(--color-human); }
+  .track .marker.r25 { left: 37.5%; background: linear-gradient(90deg, var(--color-human) 50%, var(--color-partner) 50%); }
+  .track .marker.r35 { left: 62.5%; background: linear-gradient(90deg, var(--color-partner) 50%, var(--color-ai) 50%); }
+  .track .marker.r45 { left: 87.5%; background: var(--color-ai); }
+
+  /* N/A marker */
+  .track.na {
+    background: repeating-linear-gradient(
+      45deg,
+      #ececec,
+      #ececec 4px,
+      #f6f6f6 4px,
+      #f6f6f6 8px
+    );
+  }
+  .track.na::after {
+    content: "N/A";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--color-faint);
+    letter-spacing: 0.06em;
+  }
+
+  /* Track caps — "1 human-only" and "5 AI-led" */
+  .axes-caps {
+    display: grid;
+    grid-template-columns: 200px 1fr 30px;
+    gap: 12px;
+    font-family: var(--sans);
+    font-size: 11px;
+    color: var(--color-faint);
+    margin: 8px 0 4px 0;
+    letter-spacing: 0;
+  }
+  .axes-caps .caps {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2px;
+  }
+
+  /* ------------------------------------------------------------------
+     <details> blocks
+     ------------------------------------------------------------------ */
+  details.axis-detail {
+    margin: 6px 0 0 0;
+    padding: 6px 0 6px 0;
+    border-top: 1px solid var(--color-rule);
+    font-family: var(--serif);
+  }
+  details.axis-detail:first-of-type {
+    margin-top: 18px;
+  }
+  details.axis-detail > summary {
+    cursor: pointer;
+    list-style: revert;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-muted);
+    padding: 6px 0 6px 4px;
+    letter-spacing: 0;
+    text-transform: none;
+    outline: none;
+  }
+  details.axis-detail > summary::-webkit-details-marker {
+    color: var(--color-faint);
+  }
+  details.axis-detail > summary:hover { color: var(--color-text); }
+  details.axis-detail > summary .rating-pill {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    color: var(--color-muted);
+    margin-left: 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  details.axis-detail .body {
+    padding: 6px 4px 10px 22px;
+    font-size: 14px;
+    color: var(--color-text);
+  }
+  details.axis-detail .body p {
+    margin: 0 0 8px 0;
+  }
+  details.axis-detail .body p.workflow {
+    color: var(--color-muted);
+    font-size: 13.5px;
+  }
+  details.axis-detail .body p.fm {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--color-muted);
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dotted var(--color-rule);
+  }
+  details.axis-detail .body p.fm strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  /* ------------------------------------------------------------------
+     Reference block — collapsed by default, contains axes + scale + legend
+     ------------------------------------------------------------------ */
+  details.reference-block {
+    margin: 8px 0 36px 0;
+    border-top: 0;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  details.reference-block > summary {
+    cursor: pointer;
+    list-style: revert;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-text);
+    padding: 14px 4px;
+    outline: none;
+  }
+  details.reference-block > summary:hover { color: var(--color-muted); }
+  details.reference-block > summary::-webkit-details-marker { color: var(--color-faint); }
+  details.reference-block[open] > summary {
+    border-bottom: 1px solid var(--color-rule);
+  }
+  details.reference-block .reference-body {
+    padding: 16px 4px 20px 4px;
+  }
+  details.reference-block h3.ref-h {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-text);
+    margin: 22px 0 8px 0;
+    padding: 0;
+    border: 0;
+  }
+  details.reference-block h3.ref-h:first-child {
+    margin-top: 0;
+  }
+
+  /* ------------------------------------------------------------------
+     Overall row — single-bar summary visible by default per paper
+     ------------------------------------------------------------------ */
+  .overall {
+    margin: 16px 0 4px 0;
+  }
+  .overall-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 200px;
+    align-items: center;
+    gap: 14px;
+  }
+  .overall-row .axis-label {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-text);
+  }
+  .overall-row .track {
+    height: 18px;
+    border-radius: 9px;
+  }
+  .overall-row .track .marker {
+    width: 14px;
+    height: 14px;
+    margin-left: -7px;
+    margin-top: -7px;
+  }
+  .overall-row .overall-label {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--color-muted);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .overall-row .overall-label .num {
+    color: var(--color-text);
+    font-weight: 600;
+    font-style: normal;
+    font-feature-settings: "tnum" 1;
+  }
+  .overall-caps {
+    display: grid;
+    grid-template-columns: 80px 1fr 200px;
+    gap: 14px;
+    margin: 4px 0 0 0;
+    font-family: var(--sans);
+    font-size: 11px;
+    color: var(--color-faint);
+    letter-spacing: 0;
+  }
+  .overall-caps .caps {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2px;
+  }
+
+  /* ------------------------------------------------------------------
+     Per-axis breakdown — collapsible block wrapper
+     ------------------------------------------------------------------ */
+  details.axes-block {
+    margin: 14px 0 0 0;
+    padding: 8px 0 0 0;
+    border-top: 1px dashed var(--color-rule);
+  }
+  details.axes-block > summary {
+    cursor: pointer;
+    list-style: revert;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-muted);
+    letter-spacing: 0;
+    padding: 6px 0;
+    outline: none;
+  }
+  details.axes-block > summary:hover {
+    color: var(--color-text);
+  }
+  details.axes-block > summary::-webkit-details-marker {
+    color: var(--color-faint);
+  }
+  details.axes-block[open] > summary {
+    margin-bottom: 8px;
+  }
+
+  /* ------------------------------------------------------------------
+     Other publications — text-only list
+     ------------------------------------------------------------------ */
+  ol.pubs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: pub;
+  }
+  ol.pubs li.pub {
+    counter-increment: pub;
+    position: relative;
+    padding: 14px 0 14px 32px;
+    border-top: 1px solid var(--color-rule);
+  }
+  ol.pubs li.pub:first-of-type { border-top: 0; }
+  ol.pubs li.pub::before {
+    content: counter(pub);
+    position: absolute;
+    left: 0;
+    top: 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--color-faint);
+    width: 22px;
+    text-align: right;
+  }
+  ol.pubs li.pub .pub-title {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+  }
+  ol.pubs li.pub .pub-authors {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--color-text);
+    margin: 0 0 2px 0;
+  }
+  ol.pubs li.pub .pub-venue {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13.5px;
+    color: var(--color-muted);
+    margin: 0;
+  }
+  ol.pubs li.pub .pub-venue a {
+    font-style: normal;
+    text-decoration: none;
+  }
+  ol.pubs li.pub .pub-venue a:hover { text-decoration: underline; }
+
+  p.footnote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--color-muted);
+    margin: 16px 0 0 0;
+  }
+
+  /* ------------------------------------------------------------------
+     Outro — workflow-evolution note
+     ------------------------------------------------------------------ */
+  section.outro {
+    margin: 56px 0 24px 0;
+    padding-top: 28px;
+    border-top: 1px solid var(--color-rule);
+  }
+  section.outro p {
+    font-family: var(--serif);
+    font-size: 15.5px;
+    color: var(--color-text);
+    max-width: 62ch;
+    margin: 0;
+  }
+
+  /* ------------------------------------------------------------------
+     Single neutral link accent (round-2 convention)
+     ------------------------------------------------------------------ */
+  a {
+    color: #1a4480;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+  a:hover { color: #0d2c5a; }
+  a:visited { color: #1a4480; }
+
+  /* ------------------------------------------------------------------
+     Epistemic-status line in the page header
+     ------------------------------------------------------------------ */
+  header.page-header .positioning {
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--color-text);
+    margin: 8px 0 0 0;
+    max-width: 62ch;
+  }
+
+  /* ------------------------------------------------------------------
+     Inline link appended to venue line
+     ------------------------------------------------------------------ */
+  article.paper .venue a {
+    text-decoration: none;
+    margin-left: 8px;
+  }
+  article.paper .venue a::before { content: "["; color: var(--color-faint); }
+  article.paper .venue a::after  { content: "]"; color: var(--color-faint); }
+  article.paper .venue a:hover { text-decoration: underline; }
+
+  /* ------------------------------------------------------------------
+     Project-type / description — collapsible
+     ------------------------------------------------------------------ */
+  details.desc-detail {
+    margin: 0 0 18px 0;
+  }
+  details.desc-detail > summary {
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--color-muted);
+    padding: 0;
+    outline: none;
+  }
+  details.desc-detail > summary::-webkit-details-marker { display: none; }
+  details.desc-detail > summary::before {
+    content: "▸";
+    display: inline-block;
+    color: var(--color-faint);
+    margin-right: 6px;
+    font-style: normal;
+    transition: transform 120ms ease;
+  }
+  details.desc-detail[open] > summary::before {
+    transform: rotate(90deg);
+  }
+  details.desc-detail > .desc {
+    margin: 8px 0 0 18px;
+    font-size: 15.5px;
+    color: var(--color-text);
+    font-style: normal;
+  }
+
+  /* ------------------------------------------------------------------
+     Paper-anchor strip under "Per-paper decomposition" H2
+     ------------------------------------------------------------------ */
+  nav.paper-anchors {
+    margin: -8px 0 24px 0;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--color-muted);
+  }
+  nav.paper-anchors a {
+    text-decoration: none;
+    margin-right: 14px;
+    color: var(--color-muted);
+  }
+  nav.paper-anchors a::before { content: "["; color: var(--color-faint); }
+  nav.paper-anchors a::after  { content: "]"; color: var(--color-faint); }
+  nav.paper-anchors a:hover { text-decoration: underline; color: #1a4480; }
+
+  /* ------------------------------------------------------------------
+     Rotating-arrow disclosures (override native marker)
+     ------------------------------------------------------------------ */
+  details.axis-detail > summary,
+  details.axes-block > summary,
+  details.reference-block > summary {
+    list-style: none;
+  }
+  details.axis-detail > summary::-webkit-details-marker,
+  details.axes-block > summary::-webkit-details-marker,
+  details.reference-block > summary::-webkit-details-marker {
+    display: none;
+  }
+  details.axis-detail > summary::before,
+  details.axes-block > summary::before,
+  details.reference-block > summary::before {
+    content: "▸";
+    display: inline-block;
+    color: var(--color-faint);
+    margin-right: 8px;
+    transition: transform 120ms ease;
+  }
+  details.axis-detail[open] > summary::before,
+  details.axes-block[open] > summary::before,
+  details.reference-block[open] > summary::before {
+    transform: rotate(90deg);
+  }
+
+  /* ------------------------------------------------------------------
+     Footer
+     ------------------------------------------------------------------ */
+  footer.page-footer {
+    margin-top: 56px;
+    padding-top: 18px;
+    border-top: 1px solid var(--color-rule);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--color-faint);
+    letter-spacing: 0;
+  }
+
+  /* ------------------------------------------------------------------
+     Print styles — make this PDF-friendly for emergency CV addendum
+     ------------------------------------------------------------------ */
+  @media print {
+    html, body { background: #fff; color: #000; }
+    main { max-width: 100%; padding: 24px; }
+    article.paper {
+      page-break-inside: avoid;
+      border: 1px solid #999;
+      background: #fff;
+    }
+    .legend { background: #fff; border-color: #999; }
+    /* Force-open all <details> for printing */
+    details.axis-detail[open] > summary,
+    details.axis-detail > summary {
+      list-style: none;
+    }
+    details.axis-detail > .body { display: block !important; }
+    details.axis-detail { border-top: 1px solid #ccc; }
+    /* Don't try to colorize too aggressively in print */
+    .track .marker { box-shadow: none; }
+    footer.page-footer { color: #555; }
+  }
+  /* Force <details> open in print even if user has them collapsed */
+  @media print {
+    details:not([open]) > *:not(summary) { display: block !important; }
+    details > summary::-webkit-details-marker { display: none; }
+  }
+
+  /* ------------------------------------------------------------------
+     Narrow viewports
+     ------------------------------------------------------------------ */
+  @media (max-width: 560px) {
+    main { padding: 32px 16px 64px 16px; }
+    .axes li { grid-template-columns: 1fr; gap: 4px; }
+    .axes .axis-rating { text-align: left; }
+    .axes-caps { grid-template-columns: 1fr; }
+    .axes-caps .caps-spacer { display: none; }
+    article.paper { padding: 20px 18px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <header class="page-header">
+    <h1>Junyu Ren &mdash; research portfolio</h1>
+    <p class="positioning">PhD student at the University of Chicago, working at the intersection of applied mathematics, neural-network theory, and AI-augmented research.</p>
+    <p class="subtitle">AI coding assistants have grown into general-purpose research agents thanks to CLI integration &mdash; but academic publishing has no convention yet for crediting them, and the human&ndash;AI split stays implicit. I'd rather share it explicitly. Each project below decomposes the contribution across six axes; click any axis for the workflow and a concrete example.</p>
+    <p class="as-of">2026-05-09</p>
+  </header>
+
+  <!-- =================================================================
+       PAPER CARDS
+       ================================================================= -->
+  <h2>Selected projects</h2>
+  <nav class="paper-anchors">
+    <a href="#paper-topology">Topology</a>
+    <a href="#paper-manifold">Manifold-weighted</a>
+    <a href="#paper-hochschild">Hochschild</a>
+    <a href="#paper-attention">Attention</a>
+    <a href="#paper-compositionality">Compositionality</a>
+    <a href="#paper-egvar">EG-VAR</a>
+    <a href="#paper-freephd">FreePhD</a>
+  </nav>
+
+  <!-- ============================================================
+       PAPER 1 — Low-dimensional Topology of Deep Neural Networks
+       ============================================================ -->
+  <article class="paper" id="paper-topology">
+    <h3>Low-dimensional Topology of Deep Neural Networks</h3>
+    <p class="authors"><strong>Junyu Ren</strong>, Lek-Heng Lim</p>
+    <p class="venue">ICML 2026 &middot; poster. <a href="https://icml.cc/virtual/2026/poster/60602">ICML page</a> <a href="papers/topology.pdf">PDF</a></p>
+
+    <div class="overall">
+      <div class="overall-row">
+        <span class="axis-label">Overall</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker" style="left: 40%; background: var(--color-human);"></span>
+        </div>
+        <span class="overall-label"><span class="num">2.6</span></span>
+      </div>
+      <div class="overall-caps">
+        <div></div>
+        <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+        <div></div>
+      </div>
+    </div>
+
+    <details class="desc-detail">
+      <summary>project type &mdash; pure theory + a small validation experiment</summary>
+      <p class="desc">
+        Width-3 networks can encode knot/link invariants across layers; ResNet &asymp; Transformer &succ; feedforward
+        in topological power, generalizing to arbitrary <em>d</em> &gt; 3.
+      </p>
+
+    <div class="axes-caps">
+      <div></div>
+      <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+      <div></div>
+    </div>
+
+    <ul class="axes">
+      <li>
+        <span class="axis-label">Ideation</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r2"></span>
+        </div>
+        <span class="axis-rating">2</span>
+      </li>
+      <li>
+        <span class="axis-label">Theorization</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r25"></span>
+        </div>
+        <span class="axis-rating">2&ndash;3</span>
+      </li>
+      <li>
+        <span class="axis-label">Mathematical proof</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r2"></span>
+        </div>
+        <span class="axis-rating">2</span>
+      </li>
+      <li>
+        <span class="axis-label">Coding / experiments</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r4"></span>
+        </div>
+        <span class="axis-rating">4</span>
+      </li>
+      <li>
+        <span class="axis-label">Paper writeup</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r4"></span>
+        </div>
+        <span class="axis-rating">4</span>
+      </li>
+      <li>
+        <span class="axis-label">Failure-mode catching</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r1"></span>
+        </div>
+        <span class="axis-rating">1</span>
+      </li>
+    </ul>
+
+    <details class="axis-detail">
+      <summary>Ideation / problem selection <span class="rating-pill">2 &middot; mostly human</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> No persistent agent. Whiteboard sessions with Lek-Heng Lim;
+          Claude used as a sounding board (fresh chat, no harness) when stress-testing intuitions
+          about which knot/link invariants might be expressible at small width.
+        </p>
+        <p>
+          <strong>Example.</strong> The "width-3 is the threshold" framing came from a hand-drawn
+          sketch tying braid-group generators to ReLU folding. AI was queried after the fact to
+          surface adjacent literature; the geometric intuition is human.
+        </p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Theorization / conceptual framework <span class="rating-pill">2&ndash;3 &middot; partnership-leaning</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> Claude Code (Opus) used to draft definitional scaffolding for
+          the layer-wise topological-power equivalence between ResNet and Transformer; iterated
+          with the user editing each pass, and a Codex (gpt-5.5, xhigh) consult on the
+          "cross-architecture equivalence" formal statement.
+        </p>
+        <p>
+          <strong>Example.</strong> The functor that sends an architecture to its layerwise
+          isotopy-class space was prototyped by CC and rewritten by hand to remove a category-level
+          conflation between objects and morphisms — a concrete instance of FM1 (PROVED-vs-VERIFIED)
+          surfacing at the conceptual layer rather than the proof layer.
+        </p>
+        <p class="fm">Failure modes caught: <strong>FM1</strong> (definitional conflation), <strong>FM3</strong> (off-tangent drift in framework drafts).</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Mathematical proof <span class="rating-pill">2 &middot; mostly human</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> CC produced first-pass proof drafts of intermediate lemmas;
+          user edited heavily, with adversarial Codex review (xhigh) for soundness.
+          No Lean formalization on this paper &mdash; review was prose-level + sympy spot-checks.
+        </p>
+        <p>
+          <strong>Example.</strong> The "ResNet realizes any width-3 isotopy class within
+          O(depth) layers" proof went through three CC drafts; Codex caught a missing case where
+          the residual stream allows zero-width skip identifications, which the user then patched
+          by hand.
+        </p>
+        <p class="fm">Failure modes caught: <strong>FM1</strong>, <strong>FM10</strong> (anti-laziness — user forced direct reasoning over a layer-counting subcase that CC initially tried to script around).</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Coding implementation / experiments <span class="rating-pill">4 &middot; mostly AI</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> CC + Opus subagent swarm (parallel <code>Agent</code> tool) for
+          the small validation experiment showing width-3 networks learn target braid invariants in
+          practice. User directed scope and spec; CC handled PyTorch glue, training loops, and
+          plotting.
+        </p>
+        <p>
+          <strong>Example.</strong> 3-Opus parallel dispatch: one subagent on data generation (random
+          braid-word sampling), one on the training harness, one on the figure pipeline; results
+          merged into a single notebook by the orchestrator agent.
+        </p>
+        <p class="fm">Failure modes caught: <strong>FM4</strong> (caught an early CC attempt to fabricate "convergence" by tightening tolerance instead of training longer).</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Paper writeup <span class="rating-pill">4 &middot; mostly AI</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> CC + Codex tag-team. CC for first-pass exposition and figure
+          captions; Codex (xhigh) for adversarial editorial review (tightening claims, flagging
+          overclaims). User edited final.
+        </p>
+        <p>
+          <strong>Example.</strong> The abstract went through four cycles: CC draft &rarr; Codex
+          critique &rarr; CC rewrite &rarr; user final. Codex flagged the original phrase
+          "transformers are topologically equivalent" as load-bearing-vague; user replaced with a
+          precise "isotopy-realization equivalence at width &ge; 3" formulation.
+        </p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Failure-mode catching / verification <span class="rating-pill">1 &middot; human-only</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> No automated verifier. Adversarial Codex review supplied
+          candidate failures; the call on whether each was a real defect or a false alarm was
+          made by the user. Final acceptance was a human judgement.
+        </p>
+        <p>
+          <strong>Example.</strong> Codex flagged seven candidate issues across the proof; user
+          confirmed three as real (and patched), three as false alarms, one as out-of-scope. The
+          decision-making layer was deliberately not delegated.
+        </p>
+      </div>
+    </details>
+    </details>
+  </article>
+
+
+  <!-- ============================================================
+       PAPER 1b — Manifold-weighted neural networks
+       ============================================================ -->
+  <article class="paper" id="paper-manifold">
+    <h3>Manifold-weighted neural networks</h3>
+    <p class="authors"><strong>Junyu Ren</strong>, Lek-Heng Lim</p>
+    <p class="venue">Under review. <a href="papers/manifold-weighted.pdf">PDF</a></p>
+
+    <div class="overall">
+      <div class="overall-row">
+        <span class="axis-label">Overall</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker" style="left: 54.2%; background: var(--color-partner);"></span>
+        </div>
+        <span class="overall-label"><span class="num">3.2</span></span>
+      </div>
+      <div class="overall-caps">
+        <div></div>
+        <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+        <div></div>
+      </div>
+    </div>
+
+    <details class="desc-detail">
+      <summary>project type &mdash; applied geometry + neural-network optimization</summary>
+      <p class="desc">
+        Manifold-aware weight parametrizations for neural-network training. Empirical pipeline and writeup driven through Claude Code with adversarial Codex review.
+      </p>
+
+    <div class="axes-caps">
+      <div></div>
+      <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+      <div></div>
+    </div>
+
+    <ul class="axes">
+      <li>
+        <span class="axis-label">Ideation</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r2"></span>
+        </div>
+        <span class="axis-rating">2</span>
+      </li>
+      <li>
+        <span class="axis-label">Theorization</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r3"></span>
+        </div>
+        <span class="axis-rating">3</span>
+      </li>
+      <li>
+        <span class="axis-label">Mathematical proof</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r3"></span>
+        </div>
+        <span class="axis-rating">3</span>
+      </li>
+      <li>
+        <span class="axis-label">Coding / experiments</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r5"></span>
+        </div>
+        <span class="axis-rating">5</span>
+      </li>
+      <li>
+        <span class="axis-label">Paper writeup</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r5"></span>
+        </div>
+        <span class="axis-rating">5</span>
+      </li>
+      <li>
+        <span class="axis-label">Failure-mode catching</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r1"></span>
+        </div>
+        <span class="axis-rating">1</span>
+      </li>
+    </ul>
+
+    <details class="axis-detail">
+      <summary>Ideation / problem selection <span class="rating-pill">2 &middot; mostly human</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> Problem framing was mine in conversation with Lek-Heng Lim; no AI in the framing step.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; replace with the actual genesis story.]</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Theorization / conceptual framework <span class="rating-pill">3 &middot; partnership</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> Manifold-aware parametrization developed in true partnership with CC, with periodic Codex audits on the formal structure.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; cite a concrete back-and-forth.]</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Mathematical proof <span class="rating-pill">3 &middot; partnership</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> Theoretical results developed in CC+Codex partnership; user signed off on each step.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; cite one specific lemma or sub-proof.]</p>
+        <p class="fm">Failure modes caught: <strong>FM1</strong>, <strong>FM3</strong>.</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Coding / experiments <span class="rating-pill">5 &middot; AI-led</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> Full CC orchestration of training code, sweeps, and evaluation. Cluster jobs through SLURM, results parsed and aggregated by CC.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; cite a concrete experimental sweep CC handled end-to-end.]</p>
+        <p class="fm">Failure modes caught: <strong>FM4</strong>, <strong>FM10</strong>.</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Paper writeup <span class="rating-pill">5 &middot; AI-led</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> Written entirely through Claude Code + Codex with no human co-writer at the writing stage. My role: research direction, prompt orchestration, editorial judgement, final acceptance.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; cite a concrete editorial intervention.]</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Failure-mode catching / verification <span class="rating-pill">1 &middot; human-only</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> Adversarial Codex review surfaced candidates; final accept/reject judgement was mine.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; cite one specific failure caught.]</p>
+      </div>
+    </details>
+
+    </details>
+    </details>
+  </article>
+
+
+  <!-- ============================================================
+       PAPER 2 — Hochschild & Harrison cohomology of T/(det)
+       ============================================================ -->
+  <article class="paper" id="paper-hochschild">
+    <h3>Hochschild &amp; Harrison cohomology of <span style="font-family:var(--mono);">T/(det)</span></h3>
+    <p class="authors"><strong>Junyu Ren</strong> (with Lek-Heng Lim, in progress)</p>
+    <p class="venue">ongoing &middot; no submission yet</p>
+
+    <div class="overall">
+      <div class="overall-row">
+        <span class="axis-label">Overall</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker" style="left: 35%; background: var(--color-human);"></span>
+        </div>
+        <span class="overall-label"><span class="num">2.4</span></span>
+      </div>
+      <div class="overall-caps">
+        <div></div>
+        <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+        <div></div>
+      </div>
+    </div>
+
+    <details class="desc-detail">
+      <summary>project type &mdash; long-horizon mathematics with cluster computation + adversarial-review proof discipline</summary>
+      <p class="desc">
+        Long-running CC-orchestrated symbolic computation pipeline; bigraded Poincar&eacute;
+        series verified at <code>N=5, d=4</code>. Mixes Macaulay2 / Singular / SageMath with
+        adversarial proof review.
+      </p>
+
+    <div class="axes-caps">
+      <div></div>
+      <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+      <div></div>
+    </div>
+
+    <ul class="axes">
+      <li>
+        <span class="axis-label">Ideation</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r1"></span>
+        </div>
+        <span class="axis-rating">1</span>
+      </li>
+      <li>
+        <span class="axis-label">Theorization</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r2"></span>
+        </div>
+        <span class="axis-rating">2</span>
+      </li>
+      <li>
+        <span class="axis-label">Mathematical proof</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r3"></span>
+        </div>
+        <span class="axis-rating">3</span>
+      </li>
+      <li>
+        <span class="axis-label">Coding / experiments</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r5"></span>
+        </div>
+        <span class="axis-rating">5</span>
+      </li>
+      <li>
+        <span class="axis-label">Paper writeup</span>
+        <div class="track na"></div>
+        <span class="axis-rating">&mdash;</span>
+      </li>
+      <li>
+        <span class="axis-label">Failure-mode catching</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r1"></span>
+        </div>
+        <span class="axis-rating">1</span>
+      </li>
+    </ul>
+
+    <details class="axis-detail">
+      <summary>Ideation / problem selection <span class="rating-pill">1 &middot; human-only</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> No AI. Problem chosen from a conversation with Lek-Heng Lim
+          about deformation theory of polynomial-ring quotients; conjectures stated by hand
+          before any agent was given access to the codebase.
+        </p>
+        <p>
+          <strong>Example.</strong> The conjecture that the bigraded Poincar&eacute; series factors
+          along a specific recurrence in <em>N</em> was written down on paper before any
+          computation. Subsequent CC pipelines were stood up to test it &mdash; not to find it.
+        </p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Theorization / conceptual framework <span class="rating-pill">2 &middot; mostly human</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> Persistent CC subagents via the local relay
+          (<code>cc_relay.py</code>, port 9120): roles <code>rep_theory</code> (sonnet) and
+          <code>formula</code> (opus) running in parallel. Both produced framework drafts on
+          Hochschild cohomology of quotient rings; user shaped the drafts toward the specific
+          <em>T/(det)</em> case.
+        </p>
+        <p>
+          <strong>Example.</strong> CC drafted the bar-resolution viewpoint and a
+          Koszul-complex viewpoint as candidate frameworks; user selected and synthesized them
+          (the bar resolution turned out to expose the symmetry the conjecture exploits).
+        </p>
+        <p class="fm">Failure modes caught: <strong>FM1</strong> (CC initially treated <em>m=1</em> verification as proof of the general case &mdash; this was the canonical instance that motivated the project's strict label vocabulary).</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Mathematical proof <span class="rating-pill">3 &middot; partnership</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> True partnership across CC, Codex (xhigh), and Opus
+          subagents. The proof-status discipline (<code>PROVED+REVIEWED / PROVED / VERIFIED /
+          CROSS-VALIDATED / BELIEVED / OPEN</code>) is the load-bearing constraint &mdash; nothing is
+          labelled <code>PROVED</code> until three clean adversarial-review rounds in a row.
+        </p>
+        <p>
+          <strong>Example.</strong> The vanishing of <em>HH<sup>2</sup></em> in degree
+          (<em>p, q</em>) for a specific range was developed iteratively: Opus drafted a spectral
+          sequence collapse argument, Codex flagged a missing differential, an Opus subagent
+          patched it, the user signed off after a final Codex round.
+        </p>
+        <p class="fm">Failure modes caught: <strong>FM1</strong> (multiple rounds of "PROVED" downgraded to "VERIFIED"), <strong>FM2</strong> (cron-driven anti-defeatism kept agents on a stuck differential for three days until it cracked).</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Coding implementation / experiments <span class="rating-pill">5 &middot; AI-led</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> CC orchestrated Macaulay2 / Singular / SageMath jobs on the
+          UChicago cluster (<code>fe.ds</code>). 6-Opus + 2-Codex parallel dispatch pattern; user
+          supervisory only (specs, sanity checks at integer-bigraded boundaries).
+        </p>
+        <p>
+          <strong>Example.</strong> The <em>N=5, d=4</em> Poincar&eacute; series verification ran
+          across 8 simultaneous Singular jobs feeding a sympy aggregation script; CC wrote the
+          job dispatcher, the result-merger, and the cross-validation harness across three
+          symbolic engines. User reviewed the final table.
+        </p>
+        <p class="fm">Failure modes caught: <strong>FM10</strong> (an early CC pipeline tried to summarize Singular output via grep instead of reading; supervisor agent caught it and forced direct reasoning).</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Paper writeup <span class="rating-pill">N/A</span></summary>
+      <div class="body">
+        <p>Writeup not yet started. Manuscript pipeline planned; will be re-rated when drafting begins.</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Failure-mode catching / verification <span class="rating-pill">1 &middot; human-only</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> User-defined label discipline; user wrote and maintains the
+          PROVED / VERIFIED / CROSS-VALIDATED label vocabulary. Adversarial review is mostly
+          agent-driven (Codex xhigh + Opus pair-review), but the meta-rule &mdash; what counts as a
+          clean round, when a label is allowed to upgrade &mdash; is enforced by the user.
+        </p>
+        <p>
+          <strong>Example.</strong> The canonical FM1 instance: an Opus subagent labelled the
+          <em>m=1</em> family proof as <code>PROVED</code> for the general statement. User caught
+          it during a routine status review, downgraded the label, added the explicit
+          <em>m=1</em> qualifier to the vocabulary, and propagated the rule across all
+          subagents' system prompts.
+        </p>
+        <p class="fm">Failure modes caught: <strong>FM1</strong> (canonical), <strong>FM3</strong>, <strong>FM9</strong> (motivated the project's progress-flowchart dashboard, <code>progress_flowchart_v2.html</code>).</p>
+      </div>
+    </details>
+    </details>
+  </article>
+
+
+  <!-- ============================================================
+       PAPER 3 — Single-head attention exact-fit
+       ============================================================ -->
+  <article class="paper" id="paper-attention">
+    <h3>Training a 2-token attention is NP-hard</h3>
+    <p class="authors"><strong>Junyu Ren</strong>, Zehua Lai, Lek-Heng Lim</p>
+    <p class="venue">Under review. <a href="papers/np-hardness.pdf">PDF</a></p>
+
+    <div class="overall">
+      <div class="overall-row">
+        <span class="axis-label">Overall</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker" style="left: 37.5%; background: var(--color-human);"></span>
+        </div>
+        <span class="overall-label"><span class="num">2.5</span></span>
+      </div>
+      <div class="overall-caps">
+        <div></div>
+        <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+        <div></div>
+      </div>
+    </div>
+
+    <details class="desc-detail">
+      <summary>project type &mdash; complexity theory + reduction from 1-in-3-SAT</summary>
+      <p class="desc">
+        Complexity-theoretic result on softmax/hardmax single-head attention exact-fit;
+        NP-completeness at the unit key dimension.
+      </p>
+
+    <div class="axes-caps">
+      <div></div>
+      <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+      <div></div>
+    </div>
+
+    <ul class="axes">
+      <li>
+        <span class="axis-label">Ideation</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r1"></span>
+        </div>
+        <span class="axis-rating">1</span>
+      </li>
+      <li>
+        <span class="axis-label">Theorization</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r2"></span>
+        </div>
+        <span class="axis-rating">2</span>
+      </li>
+      <li>
+        <span class="axis-label">Mathematical proof</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r2"></span>
+        </div>
+        <span class="axis-rating">2</span>
+      </li>
+      <li>
+        <span class="axis-label">Coding / experiments</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r5"></span>
+        </div>
+        <span class="axis-rating">5</span>
+      </li>
+      <li>
+        <span class="axis-label">Paper writeup</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r4"></span>
+        </div>
+        <span class="axis-rating">4</span>
+      </li>
+      <li>
+        <span class="axis-label">Failure-mode catching</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r1"></span>
+        </div>
+        <span class="axis-rating">1</span>
+      </li>
+    </ul>
+
+    <details class="axis-detail">
+      <summary>Ideation / problem selection <span class="rating-pill">1 &middot; human-only</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> No AI in the ideation loop. The conjecture (NP-completeness
+          at unit key dimension) and the reduction-strategy template were written down on paper
+          before any agent was loaded.
+        </p>
+        <p>
+          <strong>Example.</strong> The choice of source problem in the reduction was a human
+          call &mdash; CC was given the target conjecture and the source problem as fixed inputs and
+          asked to find a gadget; not asked to choose the framing.
+        </p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Theorization / conceptual framework <span class="rating-pill">2 &middot; mostly human</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> Gadget design &mdash; Codex (xhigh) and CC explored candidate
+          gadgets in parallel; user evaluated each candidate against the soundness/completeness
+          requirement and selected.
+        </p>
+        <p>
+          <strong>Example.</strong> The "distinct-literal" gadget used in the final reduction
+          was the third of seven candidates explored by Codex; user rejected the first six on
+          completeness grounds and accepted the seventh after manual verification of both
+          directions.
+        </p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Mathematical proof <span class="rating-pill">2 &middot; mostly human</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> CC drafted reduction attempts; user evaluated and selected
+          those that survived a soundness sweep. Codex (xhigh) ran adversarial review on each
+          accepted reduction.
+        </p>
+        <p>
+          <strong>Example.</strong> Adversarial Codex review caught a missing case in the
+          distinct-literal lemma during the third review pass &mdash; the lemma as drafted by CC
+          was sound for the "all-distinct" sub-case but silently assumed it; user patched by
+          adding an explicit clause.
+        </p>
+        <p class="fm">Failure modes caught: <strong>FM1</strong>, <strong>FM10</strong> (anti-laziness discipline kept active throughout: CC was repeatedly redirected from "let me write a checker" to "first, prove it on paper").</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Coding implementation / experiments <span class="rating-pill">5 &middot; AI-led</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> CC wrote small Python sanity-check scripts for the gadget
+          constructions and reduction targets &mdash; not a verifier, just exact-rational scratch
+          to confirm that hand-derived numbers reproduced under <code>Fraction</code> arithmetic.
+        </p>
+        <p>
+          <strong>Example.</strong> [PLACEHOLDER &mdash; cite a concrete experimental sanity check.]
+        </p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Paper writeup <span class="rating-pill">4 &middot; mostly AI</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> CC drafted; Codex reviewed; user edited final. Standard
+          three-pass loop with adversarial Codex review at each pass.
+        </p>
+        <p>
+          <strong>Example.</strong> [PLACEHOLDER &mdash; cite a concrete editorial intervention.]
+        </p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Failure-mode catching / verification <span class="rating-pill">1 &middot; human-only</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> Adversarial Codex review supplied candidate issues; I
+          adjudicated. There is no automated verifier on this project &mdash; final acceptance
+          on every reduction step was a human judgement.
+        </p>
+        <p>
+          <strong>Example.</strong> [PLACEHOLDER &mdash; cite a concrete issue Codex flagged and I patched.]
+        </p>
+        <p class="fm">Failure modes caught: <strong>FM1</strong>, <strong>FM10</strong>.</p>
+      </div>
+    </details>
+    </details>
+  </article>
+
+
+  <!-- ============================================================
+       PAPER 5 — Mechanistic decomposition (agent-compositionality)
+       ============================================================ -->
+  <article class="paper" id="paper-compositionality">
+    <h3>Routing-Mediated Structural Pseudo-Alignment in Sparse Mixture-of-Experts</h3>
+    <p class="authors"><strong>Junyu Ren</strong>, Su Hyeong Lee, Risi Kondor</p>
+    <p class="venue">Under review. <a href="papers/moe-pseudo-alignment.pdf">PDF</a></p>
+
+    <div class="overall">
+      <div class="overall-row">
+        <span class="axis-label">Overall</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker" style="left: 45%; background: var(--color-human);"></span>
+        </div>
+        <span class="overall-label"><span class="num">2.8</span></span>
+      </div>
+      <div class="overall-caps">
+        <div></div>
+        <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+        <div></div>
+      </div>
+    </div>
+
+    <details class="desc-detail">
+      <summary>project type &mdash; mechanistic interpretability experiments on a real LM</summary>
+      <p class="desc">
+        Empirical interpretability work on component-level decomposition in language models. Pipeline driven end-to-end through Claude Code with adversarial Codex review.
+      </p>
+
+    <div class="axes-caps">
+      <div></div>
+      <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+      <div></div>
+    </div>
+
+    <ul class="axes">
+      <li>
+        <span class="axis-label">Ideation</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r1"></span>
+        </div>
+        <span class="axis-rating">1</span>
+      </li>
+      <li>
+        <span class="axis-label">Theorization</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r2"></span>
+        </div>
+        <span class="axis-rating">2</span>
+      </li>
+      <li>
+        <span class="axis-label">Mathematical proof</span>
+        <div class="track na">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+        </div>
+        <span class="axis-rating">&mdash;</span>
+      </li>
+      <li>
+        <span class="axis-label">Coding / experiments</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r5"></span>
+        </div>
+        <span class="axis-rating">5</span>
+      </li>
+      <li>
+        <span class="axis-label">Paper writeup</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r5"></span>
+        </div>
+        <span class="axis-rating">5</span>
+      </li>
+      <li>
+        <span class="axis-label">Failure-mode catching</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r1"></span>
+        </div>
+        <span class="axis-rating">1</span>
+      </li>
+    </ul>
+
+    <details class="axis-detail">
+      <summary>Ideation / problem selection <span class="rating-pill">1 &middot; human-only</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> Problem framing was mine &mdash; chosen as a direct extension of mechanistic-interpretability questions I had been thinking about; no AI in the framing step.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; replace with the actual moment the project crystallized.]</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Theorization / conceptual framework <span class="rating-pill">2 &middot; mostly human</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> CC drafted definitional scaffolding; I edited heavily, with periodic Codex review on the formal-statement layer.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; replace with a concrete instance of theorization back-and-forth.]</p>
+        <p class="fm">Failure modes caught: <strong>FM1</strong>, <strong>FM3</strong>.</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Coding / experiments <span class="rating-pill">5 &middot; AI-led</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> Full CC orchestration of the experimental pipeline: data preparation, model probing, decomposition metrics, sweep design. Cluster jobs via SLURM, results parsed and aggregated by CC, cross-checked against analytic predictions.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; substitute a concrete experiment where CC handled an end-to-end loop you supervised.]</p>
+        <p class="fm">Failure modes caught: <strong>FM2</strong>, <strong>FM4</strong>, <strong>FM10</strong>.</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Paper writeup <span class="rating-pill">5 &middot; AI-led</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> The paper was written entirely through Claude Code + Codex with no human co-writer at the writing stage. My role: research direction, prompt orchestration, editorial judgement, final acceptance.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; concrete instance where CC produced a section and you accepted/rewrote it.]</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Failure-mode catching / verification <span class="rating-pill">1 &middot; human-only</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> Adversarial Codex review surfaced candidates; final accept/reject judgement was mine.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; cite one specific failure you caught that the agents did not.]</p>
+      </div>
+    </details>
+
+    </details>
+    </details>
+  </article>
+
+
+  <!-- ============================================================
+       PAPER 6 — EG-VAR (kernel-checked agent reasoning)
+       ============================================================ -->
+  <article class="paper" id="paper-egvar">
+    <h3>EG-VAR: A Verified Lean 4 Runtime for Empirical-Reasoning Failures in Tool-Using LLMs</h3>
+    <p class="authors"><strong>Junyu Ren</strong></p>
+    <p class="venue">Under review. <a href="papers/eg-var.pdf">PDF</a></p>
+
+    <div class="overall">
+      <div class="overall-row">
+        <span class="axis-label">Overall</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker" style="left: 41.5%; background: var(--color-human);"></span>
+        </div>
+        <span class="overall-label"><span class="num">2.7</span></span>
+      </div>
+      <div class="overall-caps">
+        <div></div>
+        <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+        <div></div>
+      </div>
+    </div>
+
+    <details class="desc-detail">
+      <summary>project type &mdash; formal verification + agent runtime (Lean 4 backend, tabular-fact pipeline)</summary>
+      <p class="desc">
+        A formal calculus and Lean 4 runtime separating verified, supported, plausible, and speculative epistemic states. Designed in direct response to overclaimed-proof failure modes I encountered in my own CC+Codex research pipelines.
+      </p>
+
+    <div class="axes-caps">
+      <div></div>
+      <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+      <div></div>
+    </div>
+
+    <ul class="axes">
+      <li>
+        <span class="axis-label">Ideation</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r1"></span>
+        </div>
+        <span class="axis-rating">1</span>
+      </li>
+      <li>
+        <span class="axis-label">Theorization</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r2"></span>
+        </div>
+        <span class="axis-rating">2</span>
+      </li>
+      <li>
+        <span class="axis-label">Mathematical proof</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r3"></span>
+        </div>
+        <span class="axis-rating">3</span>
+      </li>
+      <li>
+        <span class="axis-label">Coding / experiments</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r5"></span>
+        </div>
+        <span class="axis-rating">5</span>
+      </li>
+      <li>
+        <span class="axis-label">Paper writeup</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r4"></span>
+        </div>
+        <span class="axis-rating">4</span>
+      </li>
+      <li>
+        <span class="axis-label">Failure-mode catching</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r1"></span>
+        </div>
+        <span class="axis-rating">1</span>
+      </li>
+    </ul>
+
+    <details class="axis-detail">
+      <summary>Ideation / problem selection <span class="rating-pill">1 &middot; human-only</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> Project conceived directly in response to a failure mode I had personally encountered: agents reporting computational verification on special cases as if it were a general-parameter proof. The fix needed a typed-evidence calculus; that idea was mine.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; cite the specific Hochschild-project incident that triggered the project, if you want to be explicit.]</p>
+        <p class="fm">Failure modes caught: <strong>FM1</strong> (the founding observation).</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Theorization / conceptual framework <span class="rating-pill">2 &middot; mostly human</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> CC drafted typed-calculus formalisms; I edited iteratively, with periodic Codex (xhigh) audit on the rule system and on the four-grade evidence lattice.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; cite a concrete back-and-forth on the calculus design.]</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Mathematical proof <span class="rating-pill">3 &middot; partnership</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> Safety theorems (no-verified-hallucination, no-deductive-error, world-inconsistency containment) developed in true partnership with Codex. CC drafts, Codex audits, I sign off.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; cite one safety theorem and one specific reviewer-flagged gap that was patched.]</p>
+        <p class="fm">Failure modes caught: <strong>FM1</strong>, <strong>FM3</strong>.</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Coding / experiments <span class="rating-pill">5 &middot; AI-led</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> Lean 4 backend, tactic filter, generated-script runtime, fixture-based evaluation harness &mdash; all implemented by CC under my spec and adversarial-review supervision.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; cite the kernel-check pipeline or fixture suite by stat.]</p>
+        <p class="fm">Failure modes caught: <strong>FM4</strong>, <strong>FM10</strong>.</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Paper writeup <span class="rating-pill">4 &middot; mostly AI</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> Drafted with CC + Codex, with my edit pass for narrative coherence and precision of claims.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; cite one editorial intervention that materially changed the manuscript.]</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Failure-mode catching / verification <span class="rating-pill">1 &middot; human-only</span></summary>
+      <div class="body">
+        <p class="workflow"><strong>Workflow.</strong> The entire project IS a failure-mode response. Verification of the calculus itself was done with kernel-checked Lean 4 + fixture sweeps; epistemic judgements on what the project should and shouldn't claim were mine.</p>
+        <p><strong>Example.</strong> [PLACEHOLDER &mdash; cite one claim I rejected as overclaiming despite kernel-passing evidence.]</p>
+      </div>
+    </details>
+
+    </details>
+    </details>
+  </article>
+
+
+  <!-- ============================================================
+       PAPER 4 — FreePhD multi-agent science automation
+       ============================================================ -->
+  <article class="paper" id="paper-freephd">
+    <h3>Build Your Personalized Research Group: A Multiagent Framework for Continual and Interactive Science Automation</h3>
+    <p class="authors">
+      Ed Li<sup>&dagger;</sup>, <strong>Junyu Ren</strong><sup>&dagger;</sup>, Xintian Pan, Cat Yan, Chuanhao Li, Dirk Bergemann, Zhuoran Yang
+    </p>
+    <p class="venue">arXiv:2510.15624. <a href="https://arxiv.org/abs/2510.15624">arXiv</a> <a href="papers/freephd.pdf">PDF</a></p>
+
+    <div class="overall">
+      <div class="overall-row">
+        <span class="axis-label">Overall</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker" style="left: 40%; background: var(--color-human);"></span>
+        </div>
+        <span class="overall-label"><span class="num">2.6</span></span>
+      </div>
+      <div class="overall-caps">
+        <div></div>
+        <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+        <div></div>
+      </div>
+    </div>
+
+    <details class="desc-detail">
+      <summary>project type &mdash; multi-author engineering + research paper</summary>
+      <p class="desc">
+        Multi-agent framework for continual and interactive automation of scientific research workflows.
+      </p>
+
+    <div class="axes-caps">
+      <div></div>
+      <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+      <div></div>
+    </div>
+
+    <ul class="axes">
+      <li>
+        <span class="axis-label">Ideation</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r3"></span>
+        </div>
+        <span class="axis-rating">3</span>
+      </li>
+      <li>
+        <span class="axis-label">Theorization</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r3"></span>
+        </div>
+        <span class="axis-rating">3</span>
+      </li>
+      <li>
+        <span class="axis-label">Mathematical proof</span>
+        <div class="track na"></div>
+        <span class="axis-rating">&mdash;</span>
+      </li>
+      <li>
+        <span class="axis-label">Coding / experiments</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r3"></span>
+        </div>
+        <span class="axis-rating">3</span>
+      </li>
+      <li>
+        <span class="axis-label">Paper writeup</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r3"></span>
+        </div>
+        <span class="axis-rating">3</span>
+      </li>
+      <li>
+        <span class="axis-label">Failure-mode catching</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r1"></span>
+        </div>
+        <span class="axis-rating">1</span>
+      </li>
+    </ul>
+
+    <details class="axis-detail">
+      <summary>Ideation / problem selection <span class="rating-pill">3 &middot; partnership</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> Multi-author brainstorming sessions augmented with AI
+          (CC + Codex) for adjacent-literature surveys and framing experiments. No persistent
+          single-agent driver &mdash; the team rotated who held the lead per topic.
+        </p>
+        <p>
+          <strong>Example.</strong> The "harness optimization as the right abstraction" framing
+          (Junyu's contribution scope) emerged from a Codex consult cross-referenced against
+          the team's whiteboard sessions; multiple co-authors independently converged on
+          adjacent versions of the framing.
+        </p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Theorization / conceptual framework <span class="rating-pill">3 &middot; partnership</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> CC + Codex partnered with the team on the agent-network
+          topology formalism. Junyu's own contribution scope (topology optimization, prompt
+          optimization) was developed in tight loops with CC; co-authors covered the broader
+          theoretical scaffolding.
+        </p>
+        <p>
+          <strong>Example.</strong> The agent-graph parameterization Junyu introduced was
+          drafted with CC, formalized in partnership with Codex (xhigh) over a sequence of
+          design rounds, then integrated into the paper's broader framework by the team.
+        </p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Mathematical proof <span class="rating-pill">N/A</span></summary>
+      <div class="body">
+        <p>
+          The paper is engineering-led; no formal proofs in Junyu's contribution scope. Empirical
+          ablations and engineering benchmarks substitute for the proof axis.
+        </p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Coding implementation / experiments <span class="rating-pill">3 &middot; partnership</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> Junyu's contribution scope: agent network topology
+          experiments + prompt-optimization sweeps. CC drove substantial code; user co-developed
+          the harness and ablation design. Multi-agent framework integration with co-authors
+          via shared repo.
+        </p>
+        <p>
+          <strong>Example.</strong> The topology-sweep harness (sweep over connectivity patterns
+          across 235 atomic agents on Gemma 2 2B in adjacent work) was prototyped via CC and
+          extended into the paper's experimental pipeline; user wrote the experiment specs and
+          edited the analysis.
+        </p>
+        <p class="fm">Failure modes caught: <strong>FM6</strong> (job-rotation context loss in early multi-agent runs surfaced the need for context modularization, FM8 mitigation).</p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Paper writeup <span class="rating-pill">3 &middot; partnership</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> Multi-author drafting; Junyu wrote sections covering his
+          contribution areas via CC + Codex on a per-section basis. Co-authors integrated.
+        </p>
+        <p>
+          <strong>Example.</strong> The harness-optimization section was drafted by Junyu with
+          CC, reviewed by Codex (xhigh), and integrated into the paper's main narrative by Ed
+          Li and the senior co-authors.
+        </p>
+      </div>
+    </details>
+
+    <details class="axis-detail">
+      <summary>Failure-mode catching / verification <span class="rating-pill">1 &middot; human-only</span></summary>
+      <div class="body">
+        <p class="workflow">
+          <strong>Workflow.</strong> User catches failure modes within his own contribution
+          scope. Paper-level review is multi-author; co-authors handle the cross-contribution
+          consistency layer.
+        </p>
+        <p>
+          <strong>Example.</strong> Within Junyu's harness-optimization sections, all decisions
+          about what counts as a passing ablation, what counts as an honest negative result, and
+          what counts as overclaiming are user-only. Paper-level final-review is shared.
+        </p>
+      </div>
+    </details>
+    </details>
+  </article>
+
+
+  <!-- =================================================================
+       OTHER PUBLICATIONS — text-only list
+       ================================================================= -->
+  <h2>Other publications</h2>
+
+  <ol class="pubs">
+
+    <li class="pub">
+      <p class="pub-title">Optimization Dynamics Imprint Semantic Specificity in Contrastive Embedding Norms</p>
+      <p class="pub-authors">Ziwei Su, <strong>Junyu Ren</strong>, Victor Veitch</p>
+      <p class="pub-venue">Under review. <a href="papers/contrastive-norms.pdf">[PDF]</a></p>
+    </li>
+
+    <li class="pub">
+      <p class="pub-title">MAPPA: Scaling Multiagent Systems with Process Rewards</p>
+      <p class="pub-authors">Ed Li<sup>&dagger;</sup>, <strong>Junyu Ren</strong><sup>&dagger;</sup>, Cat Yan</p>
+      <p class="pub-venue">ICLR 2026 Workshop RSI (Poster). <a href="https://openreview.net/forum?id=s06wgoO65a">[OpenReview]</a> <a href="papers/mappa.pdf">[PDF]</a></p>
+    </li>
+
+    <li class="pub">
+      <p class="pub-title">Agent-as-a-Coach: Towards Fully Agentic, Stateful, and Tool-Augmented Process Rewards</p>
+      <p class="pub-authors">Ed Li<sup>&dagger;</sup>, <strong>Junyu Ren</strong><sup>&dagger;</sup>, Cat Yan, Kerem Goksel</p>
+      <p class="pub-venue">ICLR 2026 Workshop MALGAI. <a href="https://openreview.net/forum?id=5tQInt3Uar">[OpenReview]</a> <a href="papers/agent-as-coach.pdf">[PDF]</a></p>
+    </li>
+
+    <li class="pub">
+      <p class="pub-title">Time-aware Feature Selection: Adaptive Temporal Masking for Stable Sparse Autoencoder Training</p>
+      <p class="pub-authors">Ed Li<sup>&dagger;</sup>, <strong>Junyu Ren</strong><sup>&dagger;</sup></p>
+      <p class="pub-venue">ICLR 2025 Workshop XAI4Science. <a href="papers/timeaware-feature-selection.pdf">[PDF]</a></p>
+    </li>
+
+    <li class="pub">
+      <p class="pub-title">Unlocking Hierarchical Concept Discovery in Language Models Through Geometric Regularization</p>
+      <p class="pub-authors">Ed Li<sup>&dagger;</sup>, <strong>Junyu Ren</strong><sup>&dagger;</sup></p>
+      <p class="pub-venue">ICLR 2025 Workshop BuildingTrust. <a href="papers/hierarchical-concept-discovery.pdf">[PDF]</a></p>
+    </li>
+
+  </ol>
+
+  <p class="footnote">&dagger; Equal contribution; alphabetical order.</p>
+
+
+  <!-- =================================================================
+       OUTRO — workflow evolution note
+       ================================================================= -->
+  <section class="outro">
+    <p>
+      I started serious research in early 2025, around the time AI tools became collaborators rather than autocomplete.
+      My workflow tracked their capabilities &mdash; web chatbots, then IDE assistants, then CLI agents,
+      and now long-running CLI sessions with remote control, cron loops, and goal-directed orchestration.
+      The charts above mark, project by project, where each layer earned its place and where the human still has to live.
+    </p>
+  </section>
+
+
+  <!-- =================================================================
+       FOOTER
+       ================================================================= -->
+  <footer class="page-footer">
+    Junyu Ren &middot; UChicago &middot; junyuren@uchicago.edu &middot; github.com/7pocheR
+  </footer>
+
+</main>
+</body>
+</html>
