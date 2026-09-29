@@ -984,7 +984,7 @@
   <article class="paper" id="paper-manifold">
     <h3>Manifold-Weighted Neural Networks</h3>
     <p class="authors"><strong>Junyu Ren</strong>, Lek-Heng Lim</p>
-    <p class="venue">Under review. <a href="papers/manifold-weighted.pdf">PDF</a></p>
+    <p class="venue">NeurIPS 2026 (accepted). <a href="papers/manifold-weighted.pdf">PDF</a></p>
 
     <div class="overall">
       <div class="overall-row">
@@ -1066,6 +1066,71 @@
   </article>
 
   <!-- ============================================================
+       Optimization Dynamics Imprint Semantic Specificity in Contrastive Embedding Norms
+       ============================================================ -->
+  <article class="paper" id="paper-contrastive-norms">
+    <h3>Optimization Dynamics Imprint Semantic Specificity in Contrastive Embedding Norms</h3>
+    <p class="authors">Ziwei Su, <strong>Junyu Ren</strong>, Victor Veitch</p>
+    <p class="venue">NeurIPS 2026 (accepted). <a href="papers/contrastive-norms.pdf">PDF</a></p>
+
+    <div class="overall">
+      <div class="overall-row">
+        <span class="axis-label">Overall</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker" style="left: 33.3%; background: var(--color-human);"></span>
+        </div>
+        <span class="overall-label"><span class="num">2.3</span></span>
+      </div>
+      <div class="overall-caps">
+        <div></div>
+        <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+        <div></div>
+      </div>
+    </div>
+
+    <details class="paper-details">
+      <summary>breakdown</summary>
+      <p class="desc">Contrastive embedding models trained with scale-invariant losses (CLIP, SimCLR, Sentence-BERT) pair with cosine similarity and ignore magnitude. Yet the "discarded" embedding norms correlate with concept specificity, token frequency, and human uncertainty. We derive an analytic formula showing how embedding length encodes specificity as a byproduct of training optimization dynamics, turning norms into a free inference-time calibration signal for zero-shot classification and retrieval.</p>
+
+      <p class="scope-note"><strong>Note.</strong> Ratings reflect Junyu's contribution scope: theorization, interpretation of empirical results, and identifying downstream application channels. Blank axes are outside his contribution.</p>
+
+      <div class="axes-caps">
+        <div></div>
+        <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
+        <div></div>
+      </div>
+
+      <ul class="axes">
+      <li>
+        <span class="axis-label">Theorization</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r3"></span>
+        </div>
+        <span class="axis-rating">3</span>
+      </li>
+      <li>
+        <span class="axis-label">Interpretation</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r1"></span>
+        </div>
+        <span class="axis-rating">1</span>
+      </li>
+      <li>
+        <span class="axis-label">Coding/experiments</span>
+        <div class="track">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
+          <span class="marker r3"></span>
+        </div>
+        <span class="axis-rating">3</span>
+      </li>
+      </ul>
+    </details>
+  </article>
+
+  <!-- ============================================================
        Training a 2-token attention is NP-hard
        ============================================================ -->
   <article class="paper" id="paper-attention">
@@ -1139,71 +1204,6 @@
           <span class="marker r2"></span>
         </div>
         <span class="axis-rating">2</span>
-      </li>
-      </ul>
-    </details>
-  </article>
-
-  <!-- ============================================================
-       Optimization Dynamics Imprint Semantic Specificity in Contrastive Embedding Norms
-       ============================================================ -->
-  <article class="paper" id="paper-contrastive-norms">
-    <h3>Optimization Dynamics Imprint Semantic Specificity in Contrastive Embedding Norms</h3>
-    <p class="authors">Ziwei Su, <strong>Junyu Ren</strong>, Victor Veitch</p>
-    <p class="venue">Under review. <a href="papers/contrastive-norms.pdf">PDF</a></p>
-
-    <div class="overall">
-      <div class="overall-row">
-        <span class="axis-label">Overall</span>
-        <div class="track">
-          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
-          <span class="marker" style="left: 33.3%; background: var(--color-human);"></span>
-        </div>
-        <span class="overall-label"><span class="num">2.3</span></span>
-      </div>
-      <div class="overall-caps">
-        <div></div>
-        <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
-        <div></div>
-      </div>
-    </div>
-
-    <details class="paper-details">
-      <summary>breakdown</summary>
-      <p class="desc">Contrastive embedding models trained with scale-invariant losses (CLIP, SimCLR, Sentence-BERT) pair with cosine similarity and ignore magnitude. Yet the "discarded" embedding norms correlate with concept specificity, token frequency, and human uncertainty. We derive an analytic formula showing how embedding length encodes specificity as a byproduct of training optimization dynamics, turning norms into a free inference-time calibration signal for zero-shot classification and retrieval.</p>
-
-      <p class="scope-note"><strong>Note.</strong> Ratings reflect Junyu's contribution scope: theorization, interpretation of empirical results, and identifying downstream application channels. Blank axes are outside his contribution.</p>
-
-      <div class="axes-caps">
-        <div></div>
-        <div class="caps"><span>1 human-only</span><span>3 partnership</span><span>5 AI-led</span></div>
-        <div></div>
-      </div>
-
-      <ul class="axes">
-      <li>
-        <span class="axis-label">Theorization</span>
-        <div class="track">
-          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
-          <span class="marker r3"></span>
-        </div>
-        <span class="axis-rating">3</span>
-      </li>
-      <li>
-        <span class="axis-label">Interpretation</span>
-        <div class="track">
-          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
-          <span class="marker r1"></span>
-        </div>
-        <span class="axis-rating">1</span>
-      </li>
-      <li>
-        <span class="axis-label">Coding/experiments</span>
-        <div class="track">
-          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span><span class="tick t5"></span>
-          <span class="marker r3"></span>
-        </div>
-        <span class="axis-rating">3</span>
       </li>
       </ul>
     </details>
