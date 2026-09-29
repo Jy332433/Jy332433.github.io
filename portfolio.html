@@ -871,7 +871,7 @@
   <header class="page-header">
     <h1>Junyu Ren &mdash; research portfolio</h1>
     <p class="positioning">PhD student at the University of Chicago, working at the intersection of applied mathematics, neural-network theory, and AI-augmented research.</p>
-    <p class="subtitle">AI coding assistants have grown into general-purpose research agents thanks to CLI integration &mdash; but academic publishing has no convention yet for crediting them, and the human&ndash;AI split stays implicit. I'd rather share it explicitly. Each project below decomposes my contribution along project-specific axes on a 1&ndash;5 human-only &harr; AI-led scale, with an overall composite bar above.</p>
+    <p class="subtitle">AI coding assistants have grown into general-purpose research agents thanks to CLI integration &mdash; but academic publishing has no convention yet for crediting them, and the human&ndash;AI split stays implicit. I'd rather share it explicitly. Where provided, ratings decompose my contribution along project-specific axes on a 1&ndash;5 human-only &harr; AI-led scale, with an overall composite bar above.</p>
     <p class="as-of">2026-05-15</p>
   </header>
 
@@ -1538,10 +1538,20 @@
   <h2>Pure mathematics</h2>
 
   <!-- ============================================================
-       Extensions of the Pierce&ndash;Birkhoff conjecture beyond hyperplane partitions
+       Pierce&ndash;Birkhoff conjecture is false
+       ============================================================ -->
+  <article class="paper" id="paper-pierce-birkhoff-counterexample">
+    <h3>Pierce&ndash;Birkhoff conjecture is false</h3>
+    <p class="authors">Zehua Lai, Lek-Heng Lim, <strong>Junyu Ren</strong></p>
+    <p class="venue">Preprint, September 2026. <a href="https://arxiv.org/abs/2609.10420v1">arXiv:2609.10420</a> <a href="papers/pierce-birkhoff-counterexample.pdf">PDF</a></p>
+    <p class="desc">A counterexample to the Pierce&ndash;Birkhoff conjecture: a continuous piecewise-quadratic function on a semialgebraic partition of <strong>R</strong><sup>30</sup> that cannot be expressed as a finite max&ndash;min combination of polynomials of arbitrary degree. The construction uses pairs of symmetric matrices and a quadratic separation obstruction.</p>
+  </article>
+
+  <!-- ============================================================
+       Pierce&ndash;Birkhoff conjecture in dimension 3
        ============================================================ -->
   <article class="paper" id="paper-pierce-birkhoff">
-    <h3>Extensions of the Pierce&ndash;Birkhoff conjecture beyond hyperplane partitions</h3>
+    <h3>Pierce&ndash;Birkhoff conjecture in dimension 3</h3>
     <p class="authors"><strong>Junyu Ren</strong>, Zehua Lai, Lek-Heng Lim</p>
     <p class="venue">In preparation, 2026.</p>
 
@@ -1564,16 +1574,10 @@
     <details class="paper-details">
       <summary>breakdown</summary>
       <p class="desc">
-        Extensions of the Pierce&ndash;Birkhoff conjecture &mdash; every piecewise-polynomial
-        function on <strong>R</strong><sup>n</sup> is a finite max&ndash;min combination of
-        polynomials &mdash; from polyhedral (hyperplane) subdivisions to subdivisions induced
-        by non-hyperplane partitions. Current status: an early ideal-level obstruction
-        (where (<em>z</em>, <em>x</em><sup>2</sup>) is strictly smaller than the
-        chamber-intersection ideal (<em>x</em>, <em>z</em>)) has been sharpened. The quadratic
-        <em>n</em>=3 case remains open; the workflow has produced a pathwise additive-separator
-        reduction, then audited it into a three-part frontier &mdash; finite-separation
-        reduction, exceptional-orthant absorption, and descended quadratic infinitely-near
-        absorption.
+        Investigation of the Pierce&ndash;Birkhoff conjecture in dimension 3: whether every
+        continuous piecewise-polynomial function on a finite semialgebraic partition of
+        <strong>R</strong><sup>3</sup> can be expressed as a finite max&ndash;min combination of
+        polynomials. Manuscript in preparation.
       </p>
 
       <p class="scope-note"><strong>Workflow remark.</strong> Semi-autonomous. Claude Code is framer and orchestrator: it prepares prompts, packages local context, records proof states, dispatches independent critiques, and turns sparse mathematical directions into structured exploration. Deliberate model mix &mdash; GPT Pro runs long proof attempts through the browser; Claude Code maintains the versioned research state and decides what to ask next; GPT-5.5/Codex (called by Claude Code) audits Claude's decisions and its interpretations of GPT Pro output adversarially yet constructively. The harness has found real local mechanisms, retracted overclaims, and left a precise list of mathematical bottlenecks.</p>
